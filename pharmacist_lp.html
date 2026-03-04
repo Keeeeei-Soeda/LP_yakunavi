@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>薬ナビ｜働いてから決める、新しい転職のカタチ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2a4a;
+    --navy-mid: #2c4270;
+    --blue: #3d6fa8;
+    --blue-light: #5b8ec9;
+    --accent: #2196a0;
+    --accent-light: #e8f4f5;
+    --gold: #c8a96e;
+    --warm-white: #fafaf7;
+    --off-white: #f4f2ed;
+    --text-dark: #1e2535;
+    --text-mid: #4a5568;
+    --text-light: #718096;
+    --border: #e2ddd5;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--warm-white);
+    color: var(--text-dark);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(250,250,247,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 0 40px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-mark {
+    width: 36px; height: 36px;
+    background: var(--navy);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: white;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  .logo-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: 2px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--text-mid);
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--navy); }
+
+  .btn-header {
+    background: var(--navy);
+    color: white !important;
+    padding: 9px 22px;
+    border-radius: 4px;
+    font-size: 13px !important;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: background 0.2s !important;
+  }
+
+  .btn-header:hover { background: var(--navy-mid) !important; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    padding-top: 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    width: fit-content;
+    letter-spacing: 0.5px;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--navy);
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+  }
+
+  .hero h1 span {
+    color: var(--blue);
+    position: relative;
+  }
+
+  .hero h1 span::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    color: var(--text-mid);
+    line-height: 2;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 28px;
+    margin-bottom: 40px;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 16px 20px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    min-width: 90px;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .stat-num sup { font-size: 16px; }
+  .stat-num sub { font-size: 14px; }
+
+  .stat-label {
+    font-size: 10px;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--navy);
+    color: white;
+    padding: 16px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.25s;
+    border: 2px solid var(--navy);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    background: var(--navy-mid);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(26,42,74,0.25);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--navy);
+    padding: 16px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.25s;
+    border: 2px solid var(--navy);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-secondary:hover {
+    background: var(--off-white);
+    transform: translateY(-1px);
+  }
+
+  .hero-free-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-light);
+  }
+
+  .hero-right {
+    position: relative;
+    background: linear-gradient(135deg, #e8f0f8 0%, #d4e4f0 50%, #c8d8eb 100%);
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(61,111,168,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(200,169,110,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .hero-image-container {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-illustration {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+  }
+
+  .hero-card-mockup {
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(26,42,74,0.15);
+    max-width: 380px;
+    width: 100%;
+    animation: float 4s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .card-tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .card-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .card-info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--off-white);
+    font-size: 13px;
+  }
+
+  .card-info-row:last-child { border-bottom: none; }
+
+  .card-info-label { color: var(--text-light); }
+  .card-info-value { color: var(--text-dark); font-weight: 500; }
+  .card-info-value.highlight { color: var(--accent); }
+
+  .card-btn {
+    margin-top: 20px;
+    width: 100%;
+    background: var(--navy);
+    color: white;
+    padding: 13px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== SECTION BASE ===== */
+  section { padding: 96px 40px; }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--navy);
+    text-align: center;
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .section-sub {
+    font-size: 15px;
+    color: var(--text-mid);
+    text-align: center;
+    max-width: 580px;
+    margin: 0 auto 60px;
+    line-height: 2;
+    font-weight: 300;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+  }
+
+  /* ===== PAIN SECTION ===== */
+  .pain-section {
+    background: var(--off-white);
+  }
+
+  .pain-intro {
+    text-align: center;
+    margin-bottom: 52px;
+  }
+
+  .pain-intro p {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 20px;
+    color: var(--navy);
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .pain-intro p.sub {
+    font-size: 15px;
+    color: var(--text-mid);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .pain-item {
+    background: white;
+    border-radius: 12px;
+    padding: 28px 24px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s;
+  }
+
+  .pain-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    border-color: var(--blue-light);
+  }
+
+  .pain-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .pain-text {
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  .pain-bottom-text {
+    text-align: center;
+    padding: 32px;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+
+  .pain-bottom-text p {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    color: var(--text-mid);
+    line-height: 2.2;
+    font-weight: 300;
+  }
+
+  .pain-bottom-text .emphasis {
+    font-size: 20px;
+    color: var(--navy);
+    font-weight: 600;
+    display: block;
+    margin-top: 16px;
+  }
+
+  /* ===== SOLUTION ===== */
+  .solution-section { background: white; }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .solution-image {
+    background: linear-gradient(135deg, #e8f0f8, #d0dff0);
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    min-height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .solution-concept {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+
+  .solution-concept span {
+    display: block;
+    font-size: 14px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text-mid);
+    font-weight: 300;
+    margin-top: 12px;
+    line-height: 2;
+  }
+
+  .solution-content h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  .solution-content p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 2.2;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+
+  .solution-points {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .solution-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    background: var(--accent-light);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+  }
+
+  .solution-point-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+  .solution-point-text {
+    font-size: 14px;
+    color: var(--text-dark);
+    line-height: 1.7;
+  }
+
+  .solution-point-text strong {
+    display: block;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  /* ===== COMPARISON ===== */
+  .comparison-section { background: var(--navy); }
+
+  .comparison-section .section-eyebrow { color: var(--gold); }
+  .comparison-section .section-title { color: white; }
+  .comparison-section .section-sub { color: rgba(255,255,255,0.65); }
+  .comparison-section .divider { background: var(--gold); }
+
+  .comparison-table {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  }
+
+  .comparison-header {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    background: #f8f7f4;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .comp-header-cell {
+    padding: 20px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  .comp-header-cell.traditional {
+    background: #eaecf0;
+    color: var(--text-mid);
+    border-right: 1px solid var(--border);
+  }
+
+  .comp-header-cell.yakunavi {
+    background: var(--navy);
+    color: white;
+    font-family: 'Noto Serif JP', serif;
+  }
+
+  .comparison-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .comparison-row:last-child { border-bottom: none; }
+  .comparison-row:hover { background: #fafaf7; }
+
+  .comp-label {
+    padding: 22px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    background: #f8f7f4;
+    border-right: 1px solid var(--border);
+    letter-spacing: 0.5px;
+  }
+
+  .comp-cell {
+    padding: 22px 24px;
+    font-size: 13px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.7;
+    border-right: 1px solid var(--border);
+  }
+
+  .comp-cell:last-child { border-right: none; }
+
+  .comp-cell.good {
+    background: rgba(33,150,160,0.05);
+    color: var(--text-dark);
+  }
+
+  .comp-cell .icon { font-size: 20px; flex-shrink: 0; }
+
+  /* ===== REASONS ===== */
+  .reasons-section { background: var(--warm-white); }
+
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .reason-card {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 32px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .reason-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.09);
+    border-color: var(--blue-light);
+  }
+
+  .reason-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--navy), var(--blue));
+  }
+
+  .reason-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--off-white);
+    position: absolute;
+    top: 16px; right: 24px;
+    line-height: 1;
+  }
+
+  .reason-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .reason-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .reason-body {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 2;
+    font-weight: 300;
+  }
+
+  /* ===== FLOW ===== */
+  .flow-section { background: var(--off-white); }
+
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .flow-steps::before {
+    content: '';
+    position: absolute;
+    left: 36px; top: 36px; bottom: 36px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--navy), var(--blue-light));
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    align-items: flex-start;
+    padding: 24px 0;
+    position: relative;
+  }
+
+  .flow-num-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .flow-num {
+    width: 72px; height: 72px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: white;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(26,42,74,0.3);
+  }
+
+  .flow-content {
+    background: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    border: 1px solid var(--border);
+    margin-top: 8px;
+  }
+
+  .flow-content h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .flow-content p {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 2;
+    font-weight: 300;
+  }
+
+  .flow-content .flow-tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* ===== PRICING ===== */
+  .pricing-section { background: white; }
+
+  .pricing-header-box {
+    text-align: center;
+    padding: 32px;
+    background: var(--accent-light);
+    border-radius: 12px;
+    margin-bottom: 48px;
+    border: 1px solid rgba(33,150,160,0.2);
+  }
+
+  .pricing-header-box p {
+    font-size: 14px;
+    color: var(--text-mid);
+    margin-bottom: 8px;
+    font-weight: 300;
+  }
+
+  .pricing-free-badge {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .pricing-card {
+    background: var(--warm-white);
+    border-radius: 12px;
+    padding: 32px;
+    border: 1px solid var(--border);
+  }
+
+  .pricing-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .pricing-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--off-white);
+    font-size: 13px;
+  }
+
+  .pricing-item:last-child { border-bottom: none; }
+
+  .pricing-item-check { color: var(--accent); font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+  .pricing-item-text { color: var(--text-dark); line-height: 1.7; }
+  .pricing-item-text span { display: block; font-size: 12px; color: var(--text-light); margin-top: 2px; }
+
+  .pricing-note {
+    background: var(--off-white);
+    border-radius: 10px;
+    padding: 24px 28px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 2;
+    font-weight: 300;
+    border-left: 3px solid var(--gold);
+  }
+
+  /* ===== FAQ ===== */
+  .faq-section { background: var(--warm-white); }
+
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .faq-question {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    user-select: none;
+  }
+
+  .faq-question:hover { background: var(--off-white); }
+
+  .faq-q-mark {
+    width: 28px; height: 28px;
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .faq-q-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  .faq-toggle {
+    font-size: 20px;
+    color: var(--text-light);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+  .faq-answer {
+    display: none;
+    padding: 0 24px 20px 68px;
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 2.1;
+    font-weight: 300;
+    border-top: 1px solid var(--off-white);
+  }
+
+  .faq-item.open .faq-answer { display: block; padding-top: 16px; }
+
+  /* ===== ACCESS ===== */
+  .access-section {
+    background: var(--navy);
+    padding: 96px 40px;
+  }
+
+  .access-section .section-title { color: white; }
+  .access-section .section-eyebrow { color: var(--gold); }
+  .access-section .section-sub { color: rgba(255,255,255,0.65); }
+  .access-section .divider { background: var(--gold); }
+
+  .access-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  .access-info {
+    color: white;
+  }
+
+  .access-info h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: white;
+  }
+
+  .access-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .access-row {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+  }
+
+  .access-row-label {
+    color: var(--gold);
+    font-weight: 500;
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  .access-row-value { color: rgba(255,255,255,0.85); line-height: 1.7; }
+
+  .access-visual {
+    background: rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+  }
+
+  .access-visual .big-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 80px;
+    font-weight: 300;
+    color: white;
+    line-height: 1;
+    opacity: 0.9;
+  }
+
+  .access-visual .big-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 8px;
+    letter-spacing: 2px;
+  }
+
+  .access-visual .big-sub {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 18px;
+    color: var(--gold);
+    margin-top: 16px;
+  }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--off-white) 0%, white 100%);
+    padding: 96px 40px;
+    text-align: center;
+  }
+
+  .cta-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    padding: 60px 48px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--navy), var(--blue), var(--accent));
+  }
+
+  .cta-box h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .cta-box p {
+    font-size: 14px;
+    color: var(--text-mid);
+    line-height: 2.2;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+
+  .cta-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+
+  .cta-benefit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-dark);
+  }
+
+  .cta-benefit-icon { color: var(--accent); font-size: 16px; }
+
+  .cta-btn-group {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cta-note {
+    margin-top: 20px;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--text-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 56px 40px 32px;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand .logo-text { color: white; }
+  .footer-brand .logo-mark { background: var(--blue); }
+
+  .footer-tagline {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  .footer-col h4 {
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.55);
+    font-size: 13px;
+    transition: color 0.2s;
+    font-weight: 300;
+  }
+
+  .footer-col ul li a:hover { color: white; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ===== SCROLL ANIMATIONS ===== */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .fade-up:nth-child(2) { transition-delay: 0.1s; }
+  .fade-up:nth-child(3) { transition-delay: 0.2s; }
+  .fade-up:nth-child(4) { transition-delay: 0.3s; }
+  .fade-up:nth-child(5) { transition-delay: 0.4s; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { display: none; }
+    .hero-left { padding: 80px 32px 60px; }
+    .hero h1 { font-size: 34px; }
+    .pain-grid { grid-template-columns: 1fr 1fr; }
+    .solution-grid { grid-template-columns: 1fr; }
+    .comparison-header,
+    .comparison-row { grid-template-columns: 140px 1fr 1fr; }
+    .reasons-grid { grid-template-columns: 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .access-content { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    nav { display: none; }
+    section { padding: 64px 24px; }
+    .hero-stats { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-mark">Y</div>
+    <span class="logo-text">薬ナビ</span>
+  </a>
+  <nav>
+    <a href="#reasons">選ばれる理由</a>
+    <a href="#flow">ご利用の流れ</a>
+    <a href="#pricing">料金</a>
+    <a href="#faq">Q&A</a>
+    <a href="#register" class="btn-header">無料登録</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <div class="hero-badge">✨ おためし転職で失敗しない転職を実現</div>
+    <p class="hero-eyebrow">Yaku Navi for Pharmacists</p>
+    <h1>
+      働いてから<span>決める</span>、<br>
+      新しい転職の<br>カタチ。
+    </h1>
+    <p class="hero-sub">
+      おためし転職で職場を体験。<br>
+      本当に合う職場を、自分の目で確かめてから決められる。<br>
+      薬剤師の転職を、もっと安心に。
+    </p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">完全<sub>無料</sub></div>
+        <div class="stat-label">登録・利用料</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1<sub>分</sub></div>
+        <div class="stat-label">登録完了時間</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">0<sup>円</sup></div>
+        <div class="stat-label">掲載・手数料</div>
+      </div>
+    </div>
+    <div class="hero-cta-group">
+      <a href="/auth/register/pharmacist" class="btn-primary">💊 薬剤師として無料登録</a>
+      <a href="/auth/register/pharmacy" class="btn-secondary">🏥 薬局・採用担当の方</a>
+    </div>
+    <p class="hero-free-note">登録完了まで約1分 ｜ 完全無料 ｜ 薬局の掲載料・本採用時の手数料0円</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-illustration">
+      <div class="hero-card-mockup">
+        <span class="card-tag">おすすめの求人</span>
+        <div class="card-title">大阪市内 調剤薬局<br>スタッフ薬剤師</div>
+        <div class="card-info-row">
+          <span class="card-info-label">トライアル日給</span>
+          <span class="card-info-value highlight">¥25,000〜</span>
+        </div>
+        <div class="card-info-row">
+          <span class="card-info-label">雇用形態</span>
+          <span class="card-info-value">正社員（おためし後）</span>
+        </div>
+        <div class="card-info-row">
+          <span class="card-info-label">エリア</span>
+          <span class="card-info-value">大阪市北区・天王寺区</span>
+        </div>
+        <div class="card-info-row">
+          <span class="card-info-label">おためし期間</span>
+          <span class="card-info-value">10〜90日</span>
+        </div>
+        <div class="card-info-row">
+          <span class="card-info-label">職場の特徴</span>
+          <span class="card-info-value">在宅対応・残業少なめ</span>
+        </div>
+        <div class="card-btn">この求人を見る →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN SECTION -->
+<section class="pain-section">
+  <div class="section-inner">
+    <div class="pain-intro fade-up">
+      <p>転職活動に、こんなお悩みありませんか？</p>
+      <p class="sub">多くの薬剤師が抱える、転職の「よくある悩み」</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item fade-up">
+        <span class="pain-icon">📞</span>
+        <div class="pain-text">エージェントからの「ゴリ押し」電話や、急かされる選考に疲れている</div>
+      </div>
+      <div class="pain-item fade-up">
+        <span class="pain-icon">🔍</span>
+        <div class="pain-text">「聞いていたのと違う」という入社後のミスマッチが怖い</div>
+      </div>
+      <div class="pain-item fade-up">
+        <span class="pain-icon">🌫</span>
+        <div class="pain-text">エージェントが仲介するため、薬局側の「本当の雰囲気」が見えない</div>
+      </div>
+      <div class="pain-item fade-up">
+        <span class="pain-icon">💤</span>
+        <div class="pain-text">働きながらの転職活動をする体力・時間がない</div>
+      </div>
+      <div class="pain-item fade-up">
+        <span class="pain-icon">👥</span>
+        <div class="pain-text">スタッフの雰囲気や人間関係を、入社前に確認する方法がない</div>
+      </div>
+    </div>
+    <div class="pain-bottom-text fade-up">
+      <p>自分の働き方に合う職場、雰囲気の良い職場に転職したい。<br>でも「求人票じゃ働き方までわからない」「雰囲気は転職してみないとわからない」<br>こんな風に諦めてしまっている方も多いのではないでしょうか。</p>
+      <span class="emphasis">大丈夫です。<br>薬ナビなら、この悩みを解決できます。</span>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution-section">
+  <div class="section-inner">
+    <p class="section-eyebrow fade-up">The Solution</p>
+    <div class="divider fade-up"></div>
+    <h2 class="section-title fade-up">なぜ薬ナビなら解決できるのか</h2>
+    <p class="section-sub fade-up">エージェントという「フィルター」を排除した、新しい転職のカタチ</p>
+    <div class="solution-grid fade-up">
+      <div class="solution-image">
+        <div class="solution-concept">
+          体験して、納得して、<br>決める転職。
+          <span>
+            薬ナビは、エージェントがいません。<br>
+            直接チャットで薬局長と話せるため、<br>
+            職場の雰囲気や人間関係、<br>
+            具体的な業務内容を自分の感覚で判断できます。
+          </span>
+        </div>
+      </div>
+      <div class="solution-content">
+        <h3>薬剤師専門の<br>「おためし転職」サービス</h3>
+        <p>従来の転職エージェントは、企業からの紹介手数料（年収の30〜40%）が収入源のため、どうしても「企業側の都合」が優先されがちでした。</p>
+        <p>薬ナビは、その構造を根本から変えます。エージェントを介さず、薬剤師が薬局と直接つながれる仕組みを提供。さらに「おためし勤務期間」を設けることで、実際に働いてみてから本採用を決定できます。</p>
+        <div class="solution-points">
+          <div class="solution-point">
+            <span class="solution-point-icon">💬</span>
+            <div class="solution-point-text">
+              <strong>直接チャットで薬局長と対話</strong>
+              職場のリアルな情報を自分の目で確認できます
+            </div>
+          </div>
+          <div class="solution-point">
+            <span class="solution-point-icon">⏱</span>
+            <div class="solution-point-text">
+              <strong>おためし勤務期間（10〜90日）</strong>
+              実際に働いてから本採用を決定。入社後のミスマッチをゼロに近づけます
+            </div>
+          </div>
+          <div class="solution-point">
+            <span class="solution-point-icon">💰</span>
+            <div class="solution-point-text">
+              <strong>トライアル中も日給が発生</strong>
+              収入を得ながら、自分に合う職場を探せます
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comparison-section">
+  <div class="section-inner">
+    <p class="section-eyebrow fade-up">Comparison</p>
+    <div class="divider fade-up"></div>
+    <h2 class="section-title fade-up">従来の転職との比較</h2>
+    <p class="section-sub fade-up">グラフなど用いて、薬ナビの優位性を確認できます</p>
+    <div class="comparison-table fade-up">
+      <div class="comparison-header">
+        <div class="comp-header-cell"></div>
+        <div class="comp-header-cell traditional">従来の人材紹介サービス</div>
+        <div class="comp-header-cell yakunavi">薬ナビ</div>
+      </div>
+      <div class="comparison-row">
+        <div class="comp-label">マッチング方法</div>
+        <div class="comp-cell">
+          <span class="icon">⚠️</span>
+          エージェントによる紹介（バイアスあり）
+        </div>
+        <div class="comp-cell good">
+          <span class="icon">✅</span>
+          直接連絡・お試し勤務（フラット）
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="comp-label">情報精度</div>
+        <div class="comp-cell">
+          <span class="icon">⚠️</span>
+          PR用の良い情報に偏りがち
+        </div>
+        <div class="comp-cell good">
+          <span class="icon">✅</span>
+          現場のリアルを直接確認可能
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="comp-label">転職後の継続率</div>
+        <div class="comp-cell">
+          <span class="icon">⚠️</span>
+          ミスマッチによる早期離職が頻発
+        </div>
+        <div class="comp-cell good">
+          <span class="icon">✅</span>
+          納得して入るから、定着率が高い
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="comp-label">トライアル収入</div>
+        <div class="comp-cell">
+          <span class="icon">❌</span>
+          転職活動中は基本的に収入なし
+        </div>
+        <div class="comp-cell good">
+          <span class="icon">✅</span>
+          勤務中は日給が発生（日給25,000円〜）
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="comp-label">薬局側の負担</div>
+        <div class="comp-cell">
+          <span class="icon">⚠️</span>
+          年収の30〜40%（非常に重い）
+        </div>
+        <div class="comp-cell good">
+          <span class="icon">✅</span>
+          月収の40%（薬局に喜ばれる）
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="comp-label">登録費用</div>
+        <div class="comp-cell">
+          <span class="icon">—</span>
+          無料が多いが手数料発生
+        </div>
+        <div class="comp-cell good">
+          <span class="icon">✅</span>
+          完全無料・本採用時も薬局側のみ負担
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="reasons-section" id="reasons">
+  <div class="section-inner">
+    <p class="section-eyebrow fade-up">Why Choose Us</p>
+    <div class="divider fade-up"></div>
+    <h2 class="section-title fade-up">薬ナビが選ばれる4つの理由</h2>
+    <p class="section-sub fade-up">薬剤師の方も、薬局・病院の方も安心してご利用いただけます</p>
+    <div class="reasons-grid">
+      <div class="reason-card fade-up">
+        <span class="reason-num">01</span>
+        <span class="reason-icon">🏥</span>
+        <h3 class="reason-title">エージェントなし。<br>だから余計な心配もなし。</h3>
+        <p class="reason-body">薬ナビには、エージェントがいません。ですのでしつこい営業電話や無理な紹介の心配はありません。薬剤師様ご自身が納得のいく人を お探しいただけます。すべてオンラインで完結するので自分のペースで転職活動を行うことができます。</p>
+      </div>
+      <div class="reason-card fade-up">
+        <span class="reason-num">02</span>
+        <span class="reason-icon">✨</span>
+        <h3 class="reason-title">「入ってみなきゃわからない」を<br>なくす、おためし転職</h3>
+        <p class="reason-body">実際に働いてみてから本採用を決定できます。職場の雰囲気・人間関係・業務内容・通勤のしやすさ、すべてを体験してから判断できるので、入社後の「こんなはずじゃなかった」をゼロに近づけます。</p>
+      </div>
+      <div class="reason-card fade-up">
+        <span class="reason-num">03</span>
+        <span class="reason-icon">💰</span>
+        <h3 class="reason-title">転職活動中も、<br>収入がある安心感</h3>
+        <p class="reason-body">トライアル期間中も日給が発生します。収入を得ながら自分に合う職場を探せるため、経済的なプレッシャーなく、本当に合う職場を納得いくまで比較検討できます。複数の薬局を体験することも可能です。</p>
+      </div>
+      <div class="reason-card fade-up">
+        <span class="reason-num">04</span>
+        <span class="reason-icon">🤝</span>
+        <h3 class="reason-title">薬局にも薬剤師にも、<br>対等な関係性</h3>
+        <p class="reason-body">雇用主と労働者ではなく、プロ同士のベストパートナー探しを支援。個人情報は薬局には公開されないので、遠慮せず気になる部分は薬局様に交渉してみてください。キャリアの主体性は、自分の手に。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow-section" id="flow">
+  <div class="section-inner">
+    <p class="section-eyebrow fade-up">How It Works</p>
+    <div class="divider fade-up"></div>
+    <h2 class="section-title fade-up">ご利用の流れ</h2>
+    <p class="section-sub fade-up">登録から勤務開始まで、シンプルなステップで完了します</p>
+    <div class="flow-steps">
+      <div class="flow-step fade-up">
+        <div class="flow-num-wrap">
+          <div class="flow-num">1</div>
+        </div>
+        <div class="flow-content">
+          <span class="flow-tag">約1分で完了</span>
+          <h3>無料登録</h3>
+          <p>メールアドレスとパスワードで簡単登録。登録完了まで約1分。プロフィールの設定や薬剤師免許証のアップロードも、シンプルな手順で完了します。</p>
+        </div>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num-wrap">
+          <div class="flow-num">2</div>
+        </div>
+        <div class="flow-content">
+          <span class="flow-tag">条件で絞り込み可能</span>
+          <h3>求人を探して応募</h3>
+          <p>希望のエリア・雇用形態・業務内容などで絞り込んで気になる求人を見つけ、応募フォームから申し込みます。個人情報は薬局に開示されません。</p>
+        </div>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num-wrap">
+          <div class="flow-num">3</div>
+        </div>
+        <div class="flow-content">
+          <span class="flow-tag">直接やりとり</span>
+          <h3>薬局とメッセージ</h3>
+          <p>薬局担当者とメッセージでやり取りし、条件や職場環境について直接確認できます。エージェントを介さないので、リアルな情報を入手できます。</p>
+        </div>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num-wrap">
+          <div class="flow-num">4</div>
+        </div>
+        <div class="flow-content">
+          <span class="flow-tag">日給発生</span>
+          <h3>おためし勤務開始</h3>
+          <p>正式オファーが届いたら内容を確認し、承諾するとおためし勤務が開始できます。トライアル期間（10〜90日）中も日給が発生。実際に働いて職場を見極めます。</p>
+        </div>
+      </div>
+      <div class="flow-step fade-up">
+        <div class="flow-num-wrap">
+          <div class="flow-num">5</div>
+        </div>
+        <div class="flow-content">
+          <span class="flow-tag">納得の転職</span>
+          <h3>本採用決定 or 見送り</h3>
+          <p>おためし勤務終了後、双方が納得したら本採用決定。もし「自分には合わなかった」と感じたなら、無理に進める必要はありません。色々な薬局を見ていただき、最終的に自分に最も合う職場を見つけることが薬ナビを使う最大のメリットです。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-inner">
+    <p class="section-eyebrow fade-up">Pricing</p>
+    <div class="divider fade-up"></div>
+    <h2 class="section-title fade-up">明確な料金設定で、安心して使えるサービスです</h2>
+    <p class="section-sub fade-up">薬剤師の方は完全無料。薬局側も業界最安水準の手数料で、安心してご利用いただけます。</p>
+    <div class="pricing-header-box fade-up">
+      <p>薬剤師の方の登録・利用料</p>
+      <span class="pricing-free-badge">完全無料</span>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card fade-up">
+        <h3>💊 薬剤師の方</h3>
+        <div class="pricing-item">
+          <span class="pricing-item-check">✓</span>
+          <div class="pricing-item-text">登録料：無料<span>会員登録・プロフィール設定まで一切費用なし</span></div>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-item-check">✓</span>
+          <div class="pricing-item-text">求人閲覧・応募：無料<span>すべての求人を制限なく閲覧・応募できます</span></div>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-item-check">✓</span>
+          <div class="pricing-item-text">メッセージ機能：無料<span>薬局担当者との直接チャットも無料</span></div>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-item-check">✓</span>
+          <div class="pricing-item-text">トライアル中の日給：発生<span>体験期間終了後、薬局様から直接支払われます（日給25,000円〜）</span></div>
+        </div>
+      </div>
+      <div class="pricing-card fade-up">
+        <h3>🏥 薬局・病院の方</h3>
+        <div class="pricing-item">
+          <span class="pricing-item-check">✓</span>
+          <div class="pricing-item-text">掲載料：0円<span>薬局の掲載・求人公開は完全無料</span></div>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-item-check">✓</span>
+          <div class="pricing-item-text">本採用時の手数料：月収の40%<span>成功報酬型。年収の30〜40%の従来手数料より大幅に低い設定</span></div>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-item-check">✓</span>
+          <div class="pricing-item-text">トライアル期間の費用：日給のみ<span>試用期間中は薬剤師への日給のみをご負担ください</span></div>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-item-check">✓</span>
+          <div class="pricing-item-text">見送り時のコスト：0円<span>本採用に至らなかった場合、手数料は発生しません</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="pricing-note fade-up">
+      💡 薬剤師の方に個人を特定できる個人情報は薬局には公開されません。体験期間中に薬局様から給与の支払い方法などの説明がなければ、お手数ですが薬剤師様より薬局様にご確認をお願いします。<br>
+      <br>なお、体験期間終了後、違う薬局へ体験することももちろん可能です。色々な店舗を見ていただき、最終的に自分に最も合う薬局を見つけていただくことが薬ナビを使う最大のメリットです。
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-inner">
+    <p class="section-eyebrow fade-up">FAQ</p>
+    <div class="divider fade-up"></div>
+    <h2 class="section-title fade-up">よくあるご質問</h2>
+    <p class="section-sub fade-up">Dearsに初めてご来店される方からよくいただく質問をまとめました。ご不明な点がございましたら、お気軽にお問い合わせください。</p>
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">登録は無料ですか？</div>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">はい、すべて完全無料ですのでご安心ください。薬剤師の方の登録・求人閲覧・応募・メッセージのご利用、すべての機能を無料でお使いいただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">求人票に載ってる条件と交渉できますか？</div>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">はい。可能です。交渉するのは気が引けると思われるかもしれませんが、実際に体験するまで薬剤師様を特定できる個人情報は薬局には公開されません。ですので遠慮せず気になる部分は薬局様に交渉してみてください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">体験期間中の給与はどのようにもらえますか？</div>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">給与は体験期間終了後、薬局様から直接支払われます。体験期間中に薬局様から給与の支払い方法などの説明がなければ、お手数ですが薬剤師様より薬局様にご確認をお願いします。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">体験期間終了後、違う薬局へ体験することはできますか？</div>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">はい。もちろん可能です。色々な店舗を見ていただき、最終的に自分に最も合う薬局を見つけていただくことが薬ナビを使う最大のメリットです。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">現在在職中でも利用できますか？</div>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">はい。在職中でもご利用いただけます。すべてオンラインで完結するので、自分のペースで転職活動を進めることができます。ただしおためし勤務については、現職の就業規則をご確認の上でご応募ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">転職が成功しなかった場合、費用はかかりますか？</div>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">薬剤師の方には一切費用はかかりません。薬局側についても、本採用に至らなかった場合の手数料は発生しません。おためし期間中の日給のみご負担いただきます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <div class="faq-q-mark">Q</div>
+          <div class="faq-q-text">対応エリアはどこですか？</div>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">現在は全国の薬局・病院の求人に対応しております。オンライン完結のため、どのエリアからでもご利用いただけます。詳しくはサービス内の求人検索ページよりご確認ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCESS / COMPANY -->
+<section class="access-section">
+  <div class="section-inner">
+    <p class="section-eyebrow fade-up">About</p>
+    <div class="divider fade-up"></div>
+    <h2 class="section-title fade-up">薬ナビについて</h2>
+    <p class="section-sub fade-up">理想のキャリアを実現する転職支援サービス</p>
+    <div class="access-content fade-up">
+      <div class="access-info">
+        <h3>薬剤師・薬局のためのマッチングプラットフォーム</h3>
+        <div class="access-detail">
+          <div class="access-row">
+            <span class="access-row-label">サービス名</span>
+            <span class="access-row-value">薬ナビ（Yaku Navi）</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">対象</span>
+            <span class="access-row-value">薬剤師・薬局・病院薬剤部</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">利用料</span>
+            <span class="access-row-value">薬剤師：完全無料 ｜ 薬局：掲載無料・成功報酬型</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">URL</span>
+            <span class="access-row-value">https://yaku-navi.com</span>
+          </div>
+          <div class="access-row">
+            <span class="access-row-label">お問い合わせ</span>
+            <span class="access-row-value">サイト内お問い合わせフォームよりご連絡ください</span>
+          </div>
+        </div>
+        <a href="/contact" class="btn-secondary" style="border-color:rgba(255,255,255,0.4);color:white;">お問い合わせはこちら →</a>
+      </div>
+      <div class="access-visual">
+        <div class="big-number">1<span style="font-size:40px">分</span></div>
+        <div class="big-label">REGISTRATION TIME</div>
+        <div class="big-sub">登録完了まで約1分</div>
+        <div style="margin-top:28px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.15);">
+          <div style="font-size:13px; color:rgba(255,255,255,0.55); margin-bottom:6px;">薬局の掲載料・本採用時の手数料</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:48px; color:white; font-weight:300; line-height:1;">0<span style="font-size:20px">円</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="register">
+  <div class="cta-box fade-up">
+    <h2>髪質改善術実績No.1の効果を、<br>あなた自身の髪で体感してください。</h2>
+    <p>
+      これまでの転職の悩み、もう一人で抱え込まないでください。<br>
+      薬ナビなら、あなたの転職は必ず良くなります。<br><br>
+      自分の髪が好きになる喜び・通うほどに美しさが持続する感動・<br>
+      もう他のサロンを探さなくていい安心感。<br>
+      このすべてを、あなたにお約束します。
+    </p>
+    <div class="cta-benefits">
+      <div class="cta-benefit">
+        <span class="cta-benefit-icon">✓</span>
+        完全無料で登録
+      </div>
+      <div class="cta-benefit">
+        <span class="cta-benefit-icon">✓</span>
+        エージェントなし
+      </div>
+      <div class="cta-benefit">
+        <span class="cta-benefit-icon">✓</span>
+        実際に働いてから決断
+      </div>
+      <div class="cta-benefit">
+        <span class="cta-benefit-icon">✓</span>
+        トライアル中も日給あり
+      </div>
+    </div>
+    <div class="cta-btn-group">
+      <a href="/auth/register/pharmacist" class="btn-primary">💊 薬剤師として無料登録</a>
+      <a href="/auth/register/pharmacy" class="btn-secondary">🏥 薬局・採用担当者として登録</a>
+    </div>
+    <p class="cta-note">登録完了まで約1分 ｜ 薬局の掲載料・本採用時の手数料0円<br>あなたの転職が変わるその日まで、薬ナビが責任を持って寄り添います。</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-mark" style="background:var(--blue);">Y</div>
+          <span class="logo-text">薬ナビ</span>
+        </div>
+        <p class="footer-tagline">
+          理想のキャリアを実現する<br>薬剤師専門の転職支援サービス。<br><br>
+          当サービスは、薬剤師が職場をおためし体験した<br>上で転職できる新しい仕組みを提供しています。
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>サービス</h4>
+        <ul>
+          <li><a href="/">おためし転職とは</a></li>
+          <li><a href="#reasons">選ばれる理由</a></li>
+          <li><a href="#flow">ご利用の流れ</a></li>
+          <li><a href="#pricing">料金体系</a></li>
+          <li><a href="#faq">よくある質問</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>薬剤師の方</h4>
+        <ul>
+          <li><a href="/auth/register/pharmacist">はじめての方は登録</a></li>
+          <li><a href="/auth/login">登録済みの方はログイン</a></li>
+        </ul>
+        <h4 style="margin-top:24px;">薬局・採用担当者</h4>
+        <ul>
+          <li><a href="/auth/register/pharmacy">はじめての方は登録</a></li>
+          <li><a href="/auth/login">登録済みの方はログイン</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>会社情報</h4>
+        <ul>
+          <li><a href="/about">会社概要</a></li>
+          <li><a href="/contact">お問い合わせ</a></li>
+          <li><a href="/terms">利用規約</a></li>
+          <li><a href="/privacy">プライバシーポリシー</a></li>
+          <li><a href="/fees">手数料表および返金規定</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 薬ナビ. All rights reserved.</span>
+      <span>参考URL：https://dears-salon.com/</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Scroll animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
