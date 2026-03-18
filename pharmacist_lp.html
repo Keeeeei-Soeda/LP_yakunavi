@@ -40,13 +40,16 @@
   .hero-sub { font-size:15px; color:var(--text-mid); line-height:2; margin-bottom:32px; font-weight:300; }
   .hero-stats { display:flex; gap:16px; margin-bottom:32px; }
   .stat-item { text-align:center; padding:13px 16px; background:white; border:1px solid var(--border); border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,.05); }
-  .stat-num { font-family:'Cormorant Garamond',serif; font-size:28px; color:var(--navy); line-height:1; margin-bottom:4px; }
+  /* 数字フォントを通常フォントに統一 */
+  .stat-num { font-family:'Noto Sans JP',sans-serif; font-size:28px; font-weight:700; color:var(--navy); line-height:1; margin-bottom:4px; }
   .stat-label { font-size:10px; color:var(--text-light); }
   .hero-cta-group { display:flex; gap:12px; flex-wrap:wrap; }
   .btn-primary { background:var(--navy); color:white; padding:14px 30px; border-radius:4px; text-decoration:none; font-size:14px; font-weight:500; letter-spacing:0.5px; transition:all .25s; border:2px solid var(--navy); display:inline-flex; align-items:center; gap:8px; }
   .btn-primary:hover { background:var(--navy-mid); transform:translateY(-1px); box-shadow:0 8px 24px rgba(26,42,74,.25); }
   .btn-secondary { background:transparent; color:var(--navy); padding:14px 30px; border-radius:4px; text-decoration:none; font-size:14px; font-weight:500; transition:all .25s; border:2px solid var(--navy); display:inline-flex; align-items:center; gap:8px; }
   .btn-secondary:hover { background:var(--off-white); }
+  .btn-contact { background:transparent; color:var(--accent); padding:14px 30px; border-radius:4px; text-decoration:none; font-size:14px; font-weight:500; transition:all .25s; border:2px solid var(--accent); display:inline-flex; align-items:center; gap:8px; }
+  .btn-contact:hover { background:var(--accent-light); }
   .hero-free-note { margin-top:12px; font-size:11px; color:var(--text-light); }
 
   section { padding:96px 40px; }
@@ -115,7 +118,7 @@
   .rc-img img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; transition:transform .5s; }
   .reason-card:hover .rc-img img { transform:scale(1.05); }
   .rc-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,transparent 45%,rgba(26,42,74,.28)); }
-  .rc-num { position:absolute; top:14px; left:14px; background:var(--navy); color:white; font-family:'Cormorant Garamond',serif; font-size:16px; padding:3px 10px; border-radius:3px; z-index:2; letter-spacing:1px; }
+  .rc-num { position:absolute; top:14px; left:14px; background:var(--navy); color:white; font-family:'Noto Sans JP',sans-serif; font-size:16px; font-weight:700; padding:3px 10px; border-radius:3px; z-index:2; letter-spacing:1px; }
   .rc-body { padding:22px 22px 26px; }
   .rc-title { font-family:'Noto Serif JP',serif; font-size:16px; font-weight:600; color:var(--navy); margin-bottom:9px; line-height:1.5; }
   .rc-text { font-size:13px; color:var(--text-mid); line-height:1.9; font-weight:300; }
@@ -127,7 +130,7 @@
   .case-img { overflow:hidden; }
   .case-img img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
   .case-content { padding:24px 20px; }
-  .case-tag { display:inline-block; background:var(--navy); color:white; font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:2px; padding:3px 9px; border-radius:3px; margin-bottom:10px; }
+  .case-tag { display:inline-block; background:var(--navy); color:white; font-family:'Noto Sans JP',sans-serif; font-size:11px; letter-spacing:2px; padding:3px 9px; border-radius:3px; margin-bottom:10px; }
   .case-title { font-family:'Noto Serif JP',serif; font-size:15px; font-weight:600; color:var(--navy); margin-bottom:9px; line-height:1.5; }
   .case-body { font-size:12px; color:var(--text-mid); line-height:1.9; font-weight:300; }
 
@@ -136,7 +139,8 @@
   .flow-wrap { padding-left:44px; position:relative; }
   .flow-wrap::before { content:''; position:absolute; left:24px; top:28px; bottom:28px; width:2px; background:linear-gradient(to bottom,var(--navy),var(--blue-light)); }
   .flow-step { display:grid; grid-template-columns:50px 1fr; gap:24px; align-items:flex-start; padding:18px 0; }
-  .flow-num { width:50px; height:50px; background:var(--navy); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:19px; color:white; flex-shrink:0; box-shadow:0 4px 14px rgba(26,42,74,.3); position:relative; z-index:1; margin-left:-44px; }
+  /* 数字フォントを通常フォントに統一 */
+  .flow-num { width:50px; height:50px; background:var(--navy); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Noto Sans JP',sans-serif; font-size:19px; font-weight:700; color:white; flex-shrink:0; box-shadow:0 4px 14px rgba(26,42,74,.3); position:relative; z-index:1; margin-left:-44px; }
   .flow-content { background:var(--off-white); border-radius:10px; padding:20px 22px; border:1px solid var(--border); margin-top:2px; }
   .flow-tag { display:inline-block; background:var(--accent-light); color:var(--accent); font-size:11px; padding:2px 9px; border-radius:20px; margin-bottom:7px; }
   .flow-content h3 { font-family:'Noto Serif JP',serif; font-size:16px; font-weight:600; color:var(--navy); margin-bottom:5px; }
@@ -189,7 +193,8 @@
   .ar-value { color:rgba(255,255,255,.85); line-height:1.7; }
   .about-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
   .a-stat { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); border-radius:9px; padding:14px; text-align:center; }
-  .a-stat-num { font-family:'Cormorant Garamond',serif; font-size:34px; color:white; font-weight:300; line-height:1; }
+  /* 数字フォントを通常フォントに統一 */
+  .a-stat-num { font-family:'Noto Sans JP',sans-serif; font-size:34px; font-weight:700; color:white; line-height:1; }
   .a-stat-label { font-size:10px; color:rgba(255,255,255,.55); margin-top:4px; letter-spacing:1px; }
 
   /* CTA */
@@ -261,7 +266,7 @@
     <div class="hero-badge">✨ おためし転職で失敗しない転職を実現</div>
     <p class="hero-eyebrow">Yaku Navi for Pharmacists</p>
     <h1>働いてから<em>決める</em>、<br>新しい転職の<br>カタチ。</h1>
-    <p class="hero-sub">おためし転職で職場を体験してから本採用を決定。<br>本当に合う職場を、自分の目で確かめてから決められる。<br>薬剤師の転職を、もっと安心に。</p>
+    <p class="hero-sub">おためし転職で職場を体験してから転職先を決定。<br>本当に合う職場を、自分の目で確かめてから決められる。<br>薬剤師の転職を、もっと安心に。</p>
     <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-num">完全<span style="font-size:14px">無料</span></div>
@@ -273,16 +278,19 @@
       </div>
       <div class="stat-item">
         <div class="stat-num">0<span style="font-size:14px">円</span></div>
-        <div class="stat-label">掲載・手数料</div>
+        <div class="stat-label">手数料</div>
       </div>
     </div>
     <div class="hero-cta-group">
       <a href="/auth/register/pharmacist" class="btn-primary">💊 薬剤師として無料登録</a>
       <a href="/auth/register/pharmacy" class="btn-secondary">🏥 薬局・採用担当の方</a>
+      <a href="/contact" class="btn-contact">📩 お問い合わせ</a>
     </div>
-    <p class="hero-free-note">登録完了まで約1分 ｜ 完全無料 ｜ 薬局の掲載料・本採用時の手数料0円</p>
+    <p class="hero-free-note">登録完了まで約1分 ｜ 完全無料 ｜ おためし勤務中も給与が貰える</p>
   </div>
-  
+  <div class="hero-right">
+    <img src="./images/hero_pharmacist.jpg" alt="薬剤師">
+  </div>
 </section>
 
 <!-- PAIN -->
@@ -317,7 +325,19 @@
     <h2 class="section-title fade-up">なぜ薬ナビなら解決できるのか</h2>
     <p class="section-sub fade-up">エージェントという「フィルター」を排除した、新しい転職のカタチ</p>
     <div class="solution-grid fade-up">
-      
+      <div class="solution-img">
+        <img src="./images/solution_team.jpg" alt="薬剤師チームの写真">
+      </div>
+      <div class="solution-content">
+        <h3>薬剤師専門の<br>「おためし転職」サービス</h3>
+        <p>従来の転職エージェントは、企業からの初期手数料（年収の30〜40%）が収入源のため、どうしても「企業側の都合」が優先されがちでした。</p>
+        <p>薬ナビは、その構造を根本から変えます。エージェントを介さず、薬剤師が薬局と直接つながりながら仕事ができる「おためし勤務期間」を設けることで、実際に働いてみてから転職先を決定できます。</p>
+        <div class="solution-points">
+          <div class="sp"><div class="sp-icon">💬</div><div class="sp-text"><strong>直接チャットで薬局長と対話</strong>職場のリアルな情報を自分の目で確認できます</div></div>
+          <div class="sp"><div class="sp-icon">🔍</div><div class="sp-text"><strong>おためし勤務期間（10〜90日）</strong>実際に働いてから転職先を決定。ミスマッチをゼロに近づけます</div></div>
+          <div class="sp"><div class="sp-icon">💴</div><div class="sp-text"><strong>おためし勤務中も日給が発生</strong>収入を得ながら、自分に合う職場を探せます（例：日給25,000円）</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -335,11 +355,11 @@
         <div class="ch trad">従来の人材紹介サービス</div>
         <div class="ch navi" style="background:#eaecf0;color:var(--navy);">薬ナビ</div>
       </div>
-      <div class="comp-row"><div class="cl">マッチング方法</div><div class="cc"><span class="ico">⚠️</span>エージェントによる紹介（バイアスあり）</div><div class="cc good"><span class="ico">✅</span>直接連絡・おためし勤務（フラット）</div></div>
+      <div class="comp-row"><div class="cl">マッチング方法</div><div class="cc"><span class="ico">⚠️</span>エージェントによる紹介（バイアスあり）</div><div class="cc good"><span class="ico">✅</span>直接連絡・おためし勤務（バイアスなし）</div></div>
       <div class="comp-row"><div class="cl">情報精度</div><div class="cc"><span class="ico">⚠️</span>PR用の良い情報に偏りがち</div><div class="cc good"><span class="ico">✅</span>現場のリアルを直接確認可能</div></div>
       <div class="comp-row"><div class="cl">転職後の継続率</div><div class="cc"><span class="ico">⚠️</span>ミスマッチによる早期離職が頻発</div><div class="cc good"><span class="ico">✅</span>納得して入るから、定着率が高い</div></div>
-      <div class="comp-row"><div class="cl">トライアル収入</div><div class="cc"><span class="ico">❌</span>転職活動中は基本的に収入なし</div><div class="cc good"><span class="ico">✅</span>勤務中は日給が発生（25,000円〜）</div></div>
-      <div class="comp-row"><div class="cl">薬局側の負担</div><div class="cc"><span class="ico">⚠️</span>年収の30〜40%（非常に重い）</div><div class="cc good"><span class="ico">✅</span>月収の40%（薬局に喜ばれる）</div></div>
+      <div class="comp-row"><div class="cl">トライアル収入</div><div class="cc"><span class="ico">❌</span>転職活動中は基本的に収入なし</div><div class="cc good"><span class="ico">✅</span>おためし勤務中は日給が発生（例：25,000円）</div></div>
+      <div class="comp-row"><div class="cl">薬局側の負担</div><div class="cc"><span class="ico">⚠️</span>年収の30〜40%（非常に重い）</div><div class="cc good"><span class="ico">✅</span>月収の40%（薬局の負担軽減）</div></div>
       <div class="comp-row"><div class="cl">登録費用</div><div class="cc"><span class="ico">—</span>無料が多いが成功時に手数料発生</div><div class="cc good"><span class="ico">✅</span>薬剤師は完全無料・薬局も掲載無料</div></div>
     </div>
   </div>
@@ -353,10 +373,46 @@
     <h2 class="section-title fade-up">薬ナビが選ばれる4つの理由</h2>
     <p class="section-sub fade-up">薬剤師の方も、薬局・病院の方も安心してご利用いただけます</p>
     <div class="reasons-grid">
-      
-      
-      
-      
+      <div class="reason-card fade-up">
+        <div class="rc-img">
+          <img src="./images/reason_01.jpg" alt="薬剤師と薬局担当者のやり取り">
+          <div class="rc-num">01</div>
+        </div>
+        <div class="rc-body">
+          <div class="rc-title">エージェントなし、直接チャット対応</div>
+          <p class="rc-text">薬局担当者と直接メッセージでやり取りができます。エージェントを介さないことで、バイアスのない正確な情報を入手でき、自分のペースで転職活動を進められます。しつこい営業電話もありません。</p>
+        </div>
+      </div>
+      <div class="reason-card fade-up">
+        <div class="rc-img">
+          <img src="./images/reason_02.jpg" alt="薬局での勤務風景">
+          <div class="rc-num">02</div>
+        </div>
+        <div class="rc-body">
+          <div class="rc-title">実際に働いてみてから転職先を決定できます</div>
+          <p class="rc-text">おためし勤務期間（10〜90日）で、職場の雰囲気・人間関係・業務内容をリアルに体験できます。面接だけではわからない「本当の職場」を見極めてから、転職先を決定できます。</p>
+        </div>
+      </div>
+      <div class="reason-card fade-up">
+        <div class="rc-img">
+          <img src="./images/reason_03.jpg" alt="薬剤師の業務風景">
+          <div class="rc-num">03</div>
+        </div>
+        <div class="rc-body">
+          <div class="rc-title">転職活動中から、日給を稼げる</div>
+          <p class="rc-text">おためし勤務中も日給が発生します（例：25,000円）。在職中でも休職中でも、収入を確保しながら自分に合う職場を探すことができます。転職活動の経済的な不安を解消します。</p>
+        </div>
+      </div>
+      <div class="reason-card fade-up">
+        <div class="rc-img">
+          <img src="./images/reason_04.jpg" alt="患者と薬剤師">
+          <div class="rc-num">04</div>
+        </div>
+        <div class="rc-body">
+          <div class="rc-title">何度でも安心して転職できる</div>
+          <p class="rc-text">おためし期間終了後、合わなかった場合はコストゼロで見送りができます。複数の薬局を体験することも可能。「また失敗するかも」という不安なく、自分に最も合う職場を見つけるまで繰り返し挑戦できます。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -369,6 +425,26 @@
     <h2 class="section-title fade-up">転職が変わったお客様の声</h2>
     <p class="section-sub fade-up">これまでの転職の悩みを抱えていた方も、薬ナビで転職が変わりました</p>
     <div class="cases-grid">
+      <div class="case-card fade-up">
+        <div class="case-img">
+          <img src="./images/case_pharmacist_01.jpg" alt="転職成功した薬剤師">
+        </div>
+        <div class="case-content">
+          <span class="case-tag">CASE 01</span>
+          <div class="case-title">大手人材紹介会社の営業にうんざりで、薬ナビに乗り換え</div>
+          <p class="case-body">直接薬局長とやり取りし、おためし勤務で職場を体験してから転職。前職での私の悩みを理解してくれる職場に出会えました。もっと早く使えばよかったです。</p>
+        </div>
+      </div>
+      <div class="case-card fade-up">
+        <div class="case-img">
+          <img src="./images/case_pharmacist_02.jpg" alt="転職後に笑顔で働く薬剤師">
+        </div>
+        <div class="case-content">
+          <span class="case-tag">CASE 02</span>
+          <div class="case-title">職場の雰囲気が分かって、毎日が楽しくなりました</div>
+          <p class="case-body">前職では職場の雰囲気が合わず、悩んでいました。おためし勤務で複数の薬局を体験し、丁寧なカウンセリングで私の悩みを理解してくれる職場に出会えました。もっと早く使えばよかったです。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -387,7 +463,7 @@
       </div>
       <div class="flow-step fade-up">
         <div class="flow-num">2</div>
-        <div class="flow-content"><span class="flow-tag">条件で絞り込み可能</span><h3>求人を探して応募</h3><p>希望のエリア・雇用形態・業務内容などで絞り込んで気になる求人を見つけ、応募フォームから申し込みます。個人情報は薬局に開示されません。</p></div>
+        <div class="flow-content"><span class="flow-tag">条件で絞り込み可能</span><h3>求人を探して応募</h3><p>希望のエリア・雇用形態・業務内容などで絞り込んで気になる求人を見つけ、応募フォームから申し込みます。薬剤師様の情報はお試し勤務が決定するまでは公開されないので、安心してご利用いただけます。</p></div>
       </div>
       <div class="flow-step fade-up">
         <div class="flow-num">3</div>
@@ -395,12 +471,17 @@
       </div>
       <div class="flow-step fade-up">
         <div class="flow-num">4</div>
-        <div class="flow-content"><span class="flow-tag">日給発生</span><h3>おためし勤務開始</h3><p>正式オファーが届いたら承諾するとおためし勤務が開始できます。トライアル期間（10〜90日）中も日給が発生。実際に働いて職場を見極めます。</p></div>
+        <div class="flow-content"><span class="flow-tag">日給発生</span><h3>おためし勤務開始</h3><p>正式オファーが届いたら承諾するとおためし勤務が開始できます。おためし勤務中（10〜90日）も日給が発生。実際に働いて職場を見極めます。</p></div>
       </div>
       <div class="flow-step fade-up">
         <div class="flow-num">5</div>
-        <div class="flow-content"><span class="flow-tag">納得の転職</span><h3>本採用決定 or 見送り</h3><p>双方が納得したら本採用決定。合わなかった場合は無理に進める必要はありません。色々な薬局を体験し、最終的に自分に最も合う職場を見つけることが薬ナビを使う最大のメリットです。</p></div>
+        <div class="flow-content"><span class="flow-tag">納得の転職</span><h3>転職決定 or 見送り</h3><p>双方が納得したら転職決定。合わなかった場合は無理に進める必要はありません。色々な薬局を体験し、最終的に自分に最も合う職場を見つけることが薬ナビを使う最大のメリットです。</p></div>
       </div>
+    </div>
+    <div class="flow-imgs fade-up">
+      <img src="./images/flow_scene_01.jpg" alt="薬局での業務風景1">
+      <img src="./images/flow_scene_02.jpg" alt="薬局での業務風景2">
+      <img src="./images/flow_scene_03.jpg" alt="薬局での業務風景3">
     </div>
   </div>
 </section>
@@ -422,18 +503,18 @@
         <div class="pi"><span class="pi-check">✓</span><div class="pi-text">登録料：無料<span>会員登録・プロフィール設定まで一切費用なし</span></div></div>
         <div class="pi"><span class="pi-check">✓</span><div class="pi-text">求人閲覧・応募：無料<span>すべての求人を制限なく閲覧・応募できます</span></div></div>
         <div class="pi"><span class="pi-check">✓</span><div class="pi-text">メッセージ機能：無料<span>薬局担当者との直接チャットも無料</span></div></div>
-        <div class="pi"><span class="pi-check">✓</span><div class="pi-text">トライアル中の日給：発生<span>体験期間終了後、薬局様から直接支払われます（日給25,000円〜）</span></div></div>
+        <div class="pi"><span class="pi-check">✓</span><div class="pi-text">おためし勤務中の日給：発生<span>体験期間終了後、薬局様から直接支払われます（例：日給25,000円）</span></div></div>
       </div>
       <div class="pricing-card fade-up">
         <h3>🏥 薬局・病院の方</h3>
         <div class="pi"><span class="pi-check">✓</span><div class="pi-text">掲載料：0円<span>薬局の掲載・求人公開は完全無料</span></div></div>
-        <div class="pi"><span class="pi-check">✓</span><div class="pi-text">本採用時の手数料：月収の40%<span>成功報酬型。年収の30〜40%の従来手数料より大幅に低い設定</span></div></div>
-        <div class="pi"><span class="pi-check">✓</span><div class="pi-text">トライアル期間の費用：日給のみ<span>試用期間中は薬剤師への日給のみをご負担ください</span></div></div>
-        <div class="pi"><span class="pi-check">✓</span><div class="pi-text">見送り時のコスト：0円<span>本採用に至らなかった場合、手数料は発生しません</span></div></div>
+        <div class="pi"><span class="pi-check">✓</span><div class="pi-text">体験決定時の手数料：<strong style="color:var(--navy);font-size:15px;">月収</strong>の40%<span>成功報酬型。年収の30〜40%の従来手数料より大幅に低い設定</span></div></div>
+        <div class="pi"><span class="pi-check">✓</span><div class="pi-text">おためし勤務中の費用：薬剤師様の給与のみ<span>おためし勤務中は薬剤師への日給のみをご負担ください</span></div></div>
+        <div class="pi"><span class="pi-check">✓</span><div class="pi-text">見送り時のコスト：0円<span>転職決定に至らなかった場合、手数料は発生しません</span></div></div>
       </div>
     </div>
     <div class="pricing-note fade-up">
-      💡 薬剤師の方に個人を特定できる個人情報は薬局には公開されません。体験期間終了後、違う薬局へ体験することももちろん可能です。色々な店舗を見ていただき、最終的に自分に最も合う薬局を見つけていただくことが薬ナビを使う最大のメリットです。
+      💡 薬剤師の方の個人を特定できる情報は体験決定まで薬局には公開されません。体験期間終了後、違う薬局へ体験することももちろん可能です。色々な店舗を見ていただき、最終的に自分に最も合う薬局を見つけていただくことが薬ナビを使う最大のメリットです。
     </div>
   </div>
 </section>
@@ -456,31 +537,31 @@
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <div class="faq-qmark">Q</div><div class="faq-qtext">求人票に載ってる条件と交渉できますか？</div><span class="faq-tog">+</span>
         </div>
-        <div class="faq-ans">はい。可能です。実際に体験するまで薬剤師様を特定できる個人情報は薬局には公開されません。ですので遠慮せず気になる部分は薬局様に交渉してみてください。</div>
+        <div class="faq-ans">はい、可能です。薬剤師様の情報はお試し勤務が決定するまでは公開されないので、遠慮せず気になる部分は薬局様に交渉してみてください。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <div class="faq-qmark">Q</div><div class="faq-qtext">体験期間中の給与はどのようにもらえますか？</div><span class="faq-tog">+</span>
         </div>
-        <div class="faq-ans">給与は体験期間終了後、薬局様から直接支払われます。体験期間中に薬局様から給与の支払い方法などの説明がなければ、お手数ですが薬剤師様より薬局様にご確認をお願いします。</div>
+        <div class="faq-ans">給与はおためし勤務終了後、薬局様から直接支払われます。おためし勤務中に薬局様から給与の支払い方法などの説明がなければ、お手数ですが薬剤師様より薬局様にご確認をお願いします。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <div class="faq-qmark">Q</div><div class="faq-qtext">体験期間終了後、違う薬局へ体験することはできますか？</div><span class="faq-tog">+</span>
         </div>
-        <div class="faq-ans">はい。もちろん可能です。色々な店舗を見ていただき、最終的に自分に最も合う薬局を見つけていただくことが薬ナビを使う最大のメリットです。</div>
+        <div class="faq-ans">はい、もちろん可能です。色々な店舗を見ていただき、最終的に自分に最も合う薬局を見つけていただくことが薬ナビを使う最大のメリットです。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <div class="faq-qmark">Q</div><div class="faq-qtext">現在在職中でも利用できますか？</div><span class="faq-tog">+</span>
         </div>
-        <div class="faq-ans">はい。在職中でもご利用いただけます。すべてオンラインで完結するので、自分のペースで転職活動を進めることができます。</div>
+        <div class="faq-ans">はい、在職中でもご利用いただけます。すべてオンラインで完結するので、自分のペースで転職活動を進めることができます。</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
           <div class="faq-qmark">Q</div><div class="faq-qtext">転職が成功しなかった場合、費用はかかりますか？</div><span class="faq-tog">+</span>
         </div>
-        <div class="faq-ans">薬剤師の方には一切費用はかかりません。薬局側についても、本採用に至らなかった場合の手数料は発生しません。おためし期間中の日給のみご負担いただきます。</div>
+        <div class="faq-ans">薬剤師の方には一切費用はかかりません。薬局側についても、転職決定に至らなかった場合の手数料は発生しません。おためし勤務中の日給のみご負担いただきます。</div>
       </div>
     </div>
   </div>
@@ -500,7 +581,7 @@
           <div class="ar"><span class="ar-label">サービス名</span><span class="ar-value">薬ナビ（Yaku Navi）</span></div>
           <div class="ar"><span class="ar-label">対象</span><span class="ar-value">薬剤師・薬局・病院薬剤部</span></div>
           <div class="ar"><span class="ar-label">利用料</span><span class="ar-value">薬剤師：完全無料 ｜ 薬局：掲載無料・成功報酬型</span></div>
-          <div class="ar"><span class="ar-label">特徴</span><span class="ar-value">エージェントなし・おためし転職・トライアル日給あり</span></div>
+          <div class="ar"><span class="ar-label">特徴</span><span class="ar-value">エージェントなし・おためし転職・おためし勤務中も日給あり</span></div>
           <div class="ar"><span class="ar-label">URL</span><span class="ar-value">https://yaku-navi.com</span></div>
         </div>
         <div class="about-stats">
@@ -516,20 +597,22 @@
 <!-- CTA -->
 <section class="cta-section" id="register">
   <div class="cta-box fade-up">
-    
+    <div class="cta-photo">
+      <img src="./images/cta_pharmacist.jpg" alt="薬剤師">
+    </div>
     <h2>おためし転職で、<br>本当に合う職場を見つけませんか？</h2>
     <p>これまでの転職の悩み、もう一人で抱え込まないでください。<br>薬ナビなら、あなたの転職は必ず良くなります。<br><br>「自分に合う職場に転職できた喜び」「通うたびに仕事が楽しくなる感動」<br>「もう転職で失敗しなくていい安心感」。このすべてを、あなたにお届けします。</p>
     <div class="cta-benefits">
       <div class="cb"><span class="cb-icon">✓</span>完全無料で登録</div>
       <div class="cb"><span class="cb-icon">✓</span>エージェントなし</div>
       <div class="cb"><span class="cb-icon">✓</span>実際に働いてから決断</div>
-      <div class="cb"><span class="cb-icon">✓</span>トライアル中も日給あり</div>
+      <div class="cb"><span class="cb-icon">✓</span>おためし勤務中も日給あり</div>
     </div>
     <div class="cta-btns">
-      <a href="/contact/consultation" class="btn-primary">📅 無料オンライン面談</a>
-      <a href="/auth/register/pharmacy" class="btn-secondary">🏥 薬局・採用担当者として登録</a>
+      <a href="/auth/register/pharmacist" class="btn-primary">💊 薬剤師として無料登録</a>
+      <a href="/contact" class="btn-contact">📩 お問い合わせ</a>
     </div>
-    <p class="cta-note">登録完了まで約1分 ｜ 薬局の掲載料・本採用時の手数料0円<br>あなたの転職が変わるその日まで、薬ナビが責任を持って寄り添います。</p>
+    <p class="cta-note">登録完了まで約1分 ｜ おためし勤務中も給与が貰える<br>あなたの転職が変わるその日まで、薬ナビが責任を持って寄り添います。</p>
   </div>
 </section>
 
