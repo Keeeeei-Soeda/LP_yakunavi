@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>薬ナビ | 薬局向け採用LP</title>
+<title>薬ナビ | 薬局向け採用プラットフォーム</title>
+<link rel="canonical" href="https://yakkyoku.yaku-navi.com/">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -29,7 +30,6 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { font-family: var(--font); color: var(--text); background: var(--bg); line-height: 1.6; overflow-x: hidden; }
-
   .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
   .tag { display: inline-block; background: var(--green-pale); color: var(--green); font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 99px; letter-spacing: 0.04em; margin-bottom: 14px; }
   .section-title { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 900; line-height: 1.45; color: var(--text); }
@@ -41,13 +41,13 @@
   .btn-white:hover { background: var(--green-pale); }
   .btn-ghost { background: transparent; color: rgba(255,255,255,0.85); border: 1.5px solid rgba(255,255,255,0.4); }
   .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+  .btn-outline { background: transparent; color: var(--green); border: 1.5px solid var(--green); }
+  .btn-outline:hover { background: var(--green-pale); }
   .btn-lg { padding: 18px 44px; font-size: 1.05rem; }
-
   /* FADE IN */
   .fi { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .fi.on { opacity: 1; transform: translateY(0); }
   .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
-
   /* HEADER */
   header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
   .header-inner { max-width: 1040px; margin: 0 auto; padding: 0 20px; height: 64px; display: flex; align-items: center; justify-content: space-between; }
@@ -60,7 +60,6 @@
   .nav-link:hover { background: var(--bg-gray); color: var(--text); }
   .nav-cta { background: var(--green); color: #fff; padding: 8px 20px; border-radius: 99px; font-size: 0.85rem; font-weight: 700; text-decoration: none; transition: all 0.2s; }
   .nav-cta:hover { background: #15803d; }
-
   /* HERO */
   #hero { background: linear-gradient(160deg, var(--green-pale) 0%, #fff 55%); padding: 80px 0 72px; position: relative; overflow: hidden; }
   #hero::before { content: ''; position: absolute; top: -80px; right: -80px; width: 420px; height: 420px; background: radial-gradient(circle, rgba(34,197,94,0.12), transparent 70%); border-radius: 50%; }
@@ -81,7 +80,6 @@
   .metric-chip { flex: 1; background: var(--green-pale); border: 1px solid var(--green-border); border-radius: 12px; padding: 12px 8px; text-align: center; }
   .metric-chip .m-num { font-size: 1.2rem; font-weight: 900; color: var(--green); line-height: 1; margin-bottom: 4px; }
   .metric-chip .m-label { font-size: 0.65rem; color: var(--text-light); line-height: 1.4; }
-
   /* PAIN */
   #pain { background: #fff; padding: 88px 0; }
   .pain-header { text-align: center; margin-bottom: 48px; }
@@ -93,7 +91,6 @@
   .pain-closing { background: var(--green-pale); border: 1px solid var(--green-border); border-radius: var(--radius); padding: 28px 32px; text-align: center; }
   .pain-closing p { font-size: 1.05rem; font-weight: 700; color: var(--text); line-height: 1.75; }
   .pain-closing p span { color: var(--green); }
-
   /* SOLUTION */
   #solution { background: var(--bg-gray); padding: 88px 0; }
   .solution-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
@@ -106,7 +103,6 @@
   .sol-list li:hover { background: var(--green-pale); }
   .sol-bullet { flex-shrink: 0; width: 22px; height: 22px; background: var(--green); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; margin-top: 3px; }
   .sol-list li strong { display: block; font-weight: 700; color: var(--text); margin-bottom: 3px; font-size: 0.92rem; }
-
   /* COMPARISON */
   #comparison { background: #fff; padding: 88px 0; }
   .comparison-header { text-align: center; margin-bottom: 48px; }
@@ -128,7 +124,6 @@
   .badge-ok { flex-shrink: 0; width: 18px; height: 18px; background: var(--green-mid); color: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 800; }
   .price-bad { font-weight: 900; color: var(--red); }
   .price-good { font-weight: 900; color: var(--green); }
-
   /* WHY */
   #why { background: var(--bg-gray); padding: 88px 0; }
   .why-header { text-align: center; margin-bottom: 48px; }
@@ -139,7 +134,6 @@
   .why-icon { width: 44px; height: 44px; border-radius: 12px; background: var(--green-pale); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
   .why-card h3 { font-size: 1rem; font-weight: 700; color: var(--text); }
   .why-card p { font-size: 0.86rem; color: var(--text-mid); line-height: 1.85; }
-
   /* PROCESS */
   #process { background: #fff; padding: 88px 0; }
   .process-header { text-align: center; margin-bottom: 48px; }
@@ -152,7 +146,6 @@
   .proc-step-sub { font-size: 0.7rem; color: var(--text-light); line-height: 1.5; padding: 0 2px; }
   .process-note { margin-top: 36px; background: var(--green-pale); border-left: 4px solid var(--green); border-radius: 0 12px 12px 0; padding: 16px 22px; font-size: 0.88rem; color: var(--text-mid); line-height: 1.85; }
   .process-note strong { color: var(--green); }
-
   /* PRICING */
   #pricing { background: var(--bg-gray); padding: 88px 0; }
   .pricing-header { text-align: center; margin-bottom: 48px; }
@@ -176,7 +169,6 @@
   .pe-result .pe-label { color: rgba(255,255,255,0.75); }
   .pe-result .pe-val { font-size: 1.1rem; font-weight: 900; color: #fff; }
   .price-note { text-align: center; font-size: 0.78rem; color: var(--text-light); margin-top: 14px; line-height: 1.9; }
-
   /* QA */
   #qa { background: #fff; padding: 88px 0; }
   .qa-header { text-align: center; margin-bottom: 48px; }
@@ -191,7 +183,6 @@
   .qa-item.open .qa-chevron { transform: rotate(180deg); color: var(--green); }
   .qa-a { display: none; padding: 0 20px 18px 62px; font-size: 0.87rem; color: var(--text-mid); line-height: 1.9; }
   .qa-item.open .qa-a { display: block; }
-
   /* CTA */
   #cta { background: linear-gradient(135deg, #14532d 0%, #166534 40%, #15803d 100%); padding: 88px 0; position: relative; overflow: hidden; }
   #cta::before { content: ''; position: absolute; top: -120px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(134,239,172,0.15), transparent 70%); border-radius: 50%; }
@@ -204,7 +195,6 @@
   .cta-points { list-style: none; display: flex; flex-direction: column; gap: 12px; }
   .cta-points li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; color: rgba(255,255,255,0.82); line-height: 1.65; }
   .cta-points li::before { content: '✓'; color: #86efac; font-weight: 900; flex-shrink: 0; margin-top: 1px; }
-
   /* ENDPOINT */
   #endpoint { background: var(--bg-gray); padding: 88px 0; text-align: center; }
   .endpoint-card { max-width: 580px; margin: 0 auto; background: #fff; border-radius: 20px; padding: 52px 44px; border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
@@ -215,7 +205,6 @@
   .endpoint-checklist li { display: flex; align-items: center; gap: 8px; font-size: 0.87rem; color: var(--text-mid); margin-bottom: 10px; }
   .endpoint-checklist li::before { content: '■'; color: var(--green); font-size: 0.6rem; flex-shrink: 0; }
   .endpoint-note { font-size: 0.77rem; color: var(--text-light); margin-top: 14px; line-height: 1.9; }
-
   /* FOOTER */
   footer { background: var(--text); color: rgba(255,255,255,0.5); padding: 48px 0; }
   .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 28px; }
@@ -226,7 +215,13 @@
   .footer-links a { font-size: 0.78rem; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: rgba(255,255,255,0.8); }
   .footer-bottom { margin-top: 28px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.75rem; text-align: center; color: rgba(255,255,255,0.28); }
-
+  /* PHOTO SECTIONS */
+  .pain-photo { width: 100%; margin-bottom: 36px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+  .pain-photo img { width: 100%; height: 360px; object-fit: cover; object-position: center top; display: block; }
+  .process-photo { margin-top: 36px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+  .process-photo img { width: 100%; height: 320px; object-fit: cover; object-position: center; display: block; }
+  .cta-photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: 16px; }
+  .cta-photo img { width: 100%; height: 220px; object-fit: cover; object-position: center top; display: block; }
   /* RESPONSIVE */
   @media (max-width: 860px) {
     nav .nav-link { display: none; }
@@ -250,7 +245,6 @@
 </style>
 </head>
 <body>
-
 <!-- HEADER -->
 <header>
   <div class="header-inner">
@@ -268,7 +262,6 @@
     </nav>
   </div>
 </header>
-
 <!-- HERO -->
 <section id="hero">
   <div class="container">
@@ -279,10 +272,11 @@
         <p class="hero-lead">
           エージェントを介さない「ダイレクト・マッチング」と<br>
           「体験期間制度」で、採用の失敗をなくします。<br>
-          掲載から採用決定まで、一切費用はかかりません。
+          掲載から体験勤務決定まで、一切費用はかかりません。
         </p>
         <div class="hero-btns">
           <a href="https://yaku-navi.com/auth/register/pharmacy" class="btn btn-green btn-lg">🏥 採用担当者として無料登録</a>
+          <a href="https://yaku-navi.com/contact" class="btn btn-outline btn-lg">📩 お問い合わせ</a>
         </div>
         <div class="hero-note">
           <span>登録完了まで約1分</span>
@@ -296,10 +290,10 @@
           <ul class="flow-steps">
             <li><span class="step-chip">1</span>アカウント登録・求人票を作成・公開</li>
             <li><span class="step-chip">2</span>薬剤師から直接エントリー</li>
-            <li><span class="step-chip">3</span>メッセージ機能でオンライン面談</li>
+            <li><span class="step-chip">3</span>メッセージ機能で応募者と直接やり取り</li>
             <li><span class="step-chip">4</span>職場見学・体験入社を実施</li>
             <li><span class="step-chip">5</span>双方の合意で本採用 or 見送り</li>
-            <li><span class="step-chip" style="background:#15803d; font-size:0.8rem;">🎯</span>手数料は採用決定後のみ</li>
+            <li><span class="step-chip" style="background:#15803d; font-size:0.8rem;">🎯</span>手数料は体験決定後のみ</li>
           </ul>
           <div class="metric-row">
             <div class="metric-chip"><div class="m-num">¥0</div><div class="m-label">初期費用<br>掲載料</div></div>
@@ -311,18 +305,19 @@
     </div>
   </div>
 </section>
-
 <div style="background:var(--bg-gray);padding:0 0 0;">
   <div class="container">
     </div>
 </div>
-
 <!-- PAIN -->
 <section id="pain">
   <div class="container">
     <div class="pain-header fi">
       <div class="tag">💬 こんなお悩みありませんか？</div>
       <h2 class="section-title">採用担当者が感じる、<br>人材採用の「つらさ」</h2>
+    </div>
+    <div class="pain-photo fi">
+      <img src="./images/pain_manager.jpg" alt="採用に悩む薬局担当者">
     </div>
     <div class="pain-grid">
       <div class="pain-card fi d1"><div class="pain-icon">😔</div><div><h4>高額手数料なのに早期退職</h4>年収の30〜40%を払ったのに、数ヶ月で辞められてしまう。</div></div>
@@ -337,7 +332,6 @@
     </div>
   </div>
 </section>
-
 <!-- SOLUTION -->
 <section id="solution">
   <div class="container">
@@ -350,7 +344,7 @@
         <h2 class="section-title">薬ナビなら、<br>この悩みを根本から<br>解決できます。</h2>
         <ul class="sol-list">
           <li><span class="sol-bullet">✓</span><div><strong>採用コストの正常化</strong>異常に高騰した紹介手数料の市場を破壊し、健全な経営を支援します。</div></li>
-          <li><span class="sol-bullet">✓</span><div><strong>ミスマッチによる損失の防止</strong>体験期間でスキルとチームの相性を100%見極めてから採用決定。</div></li>
+          <li><span class="sol-bullet">✓</span><div><strong>ミスマッチによる損失の防止</strong>体験期間で応募者のスキルと既存スタッフとの相性を見極めてから採用決定。</div></li>
           <li><span class="sol-bullet">✓</span><div><strong>情報の直接発信</strong>貴局の魅力を加工なく求職者へ届けます。エージェントの恣意的な誘導なし。</div></li>
           <li><span class="sol-bullet">✓</span><div><strong>「納得の採用」を実現</strong>「とりあえず採用」ではなく「この人と働きたい」と思える出会いの創出。</div></li>
         </ul>
@@ -358,7 +352,6 @@
     </div>
   </div>
 </section>
-
 <!-- COMPARISON -->
 <section id="comparison">
   <div class="container">
@@ -396,12 +389,11 @@
       <div class="comp-row">
         <div class="comp-cell label-cell">📞 営業電話</div>
         <div class="comp-cell bad-cell"><span class="badge-x">✗</span>定期的なしつこい営業がある</div>
-        <div class="comp-cell good-cell"><span class="badge-ok">✓</span>エージェント不在、完全自由</div>
+        <div class="comp-cell good-cell"><span class="badge-ok">✓</span>エージェント不在、営業電話なし</div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- WHY -->
 <section id="why">
   <div class="container">
@@ -422,7 +414,6 @@
     </div>
   </div>
 </section>
-
 <!-- PROCESS -->
 <section id="process">
   <div class="container">
@@ -435,14 +426,16 @@
       <div class="proc-step"><div class="proc-num-wrap">🏥</div><div><div class="proc-step-title">登録</div><div class="proc-step-sub">企業・薬局が<br>サービスに登録</div></div></div>
       <div class="proc-step"><div class="proc-num-wrap">📋</div><div><div class="proc-step-title">求人票掲載</div><div class="proc-step-sub">募集要項を<br>作成・公開</div></div></div>
       <div class="proc-step"><div class="proc-num-wrap">💊</div><div><div class="proc-step-title">応募受付</div><div class="proc-step-sub">薬剤師が<br>エントリー</div></div></div>
-      <div class="proc-step"><div class="proc-num-wrap">💬</div><div><div class="proc-step-title">直接やり取り</div><div class="proc-step-sub">メッセージで<br>面談調整</div></div></div>
+      <div class="proc-step"><div class="proc-num-wrap">💬</div><div><div class="proc-step-title">直接やり取り</div><div class="proc-step-sub">エージェントなどの<br>バイアスを回避</div></div></div>
       <div class="proc-step"><div class="proc-num-wrap">🔍</div><div><div class="proc-step-title">体験開始</div><div class="proc-step-sub">職場見学・<br>体験入社</div></div></div>
       <div class="proc-step"><div class="proc-num-wrap" style="background:var(--green); border-color:var(--green);">🎉</div><div><div class="proc-step-title" style="color:var(--green);">本採用決定</div><div class="proc-step-sub">双方の合意で<br>確定</div></div></div>
     </div>
-    <div class="process-note fi d2"><strong>体験期間終了後、採用を見送ることもできます。</strong>合わないと判断された場合は自動的に契約解除。本採用に至った場合でも、<strong>追加の成功報酬は一切不要</strong>です。</div>
+    <div class="process-photo fi d3">
+      <img src="./images/process_team.jpg" alt="薬剤師スタッフのチーム写真">
+    </div>
+    <div class="process-note fi d4"><strong>体験期間終了後、採用を見送ることもできます。</strong>合わないと判断された場合は自動的に契約解除。本採用に至った場合でも、<strong>追加の成功報酬は一切不要</strong>です。</div>
   </div>
 </section>
-
 <!-- PRICING -->
 <section id="pricing">
   <div class="container">
@@ -456,11 +449,11 @@
         <div class="price-badge badge-blue">初期費用・掲載料</div>
         <div class="price-amount">¥0</div>
         <div class="price-unit">完全無料</div>
-        <div class="price-title">掲載から採用決定まで無料</div>
+        <div class="price-title">掲載から体験決定まで無料</div>
         <p class="price-desc">求人票の掲載・応募受付・メッセージ機能の利用まで一切費用はかかりません。何人でも掲載・応募受付が可能です。</p>
       </div>
       <div class="price-card featured fi d2">
-        <div class="price-badge badge-green">成約手数料（採用決定時のみ）</div>
+        <div class="price-badge badge-green">成約手数料（体験決定時のみ）</div>
         <div class="price-amount">月収 × 40%</div>
         <div class="price-unit">採用確定時・一括払い</div>
         <div class="price-title">採用が決まったときだけ</div>
@@ -478,7 +471,6 @@
     <p class="price-note fi">※本採用に至った場合でも、追加の成功報酬は一切不要です。<br>初出勤日に薬剤師様がご来局されなかった場合は手数料を全額返金いたします。</p>
   </div>
 </section>
-
 <!-- QA -->
 <section id="qa">
   <div class="container">
@@ -515,7 +507,6 @@
     </div>
   </div>
 </section>
-
 <!-- CTA -->
 <section id="cta">
   <div class="container">
@@ -523,13 +514,16 @@
       <div class="fi">
         <div class="tag" style="background:rgba(134,239,172,0.15);color:#86efac;">🚀 今すぐ始める</div>
         <div class="cta-title">採用はギャンブルでは<br>ないはずです。</div>
-        <p class="cta-sub">一人の採用に200万円を投じ、定着するかどうかを祈る日々は、もう終わりにしましょう。現場のスタッフが疲弊し経営が健全化される、そんな「当たり前」の採用を薬ナビで実現しませんか？</p>
+        <p class="cta-sub">現場のスタッフが充足し経営が健全化される、そんな「当たり前」の採用を薬ナビで実現しませんか？</p>
         <div class="cta-btns">
           <a href="https://yaku-navi.com/auth/register/pharmacy" class="btn btn-white btn-lg">🏥 採用担当者として無料登録</a>
-          <a href="https://yaku-navi.com/contact" class="btn btn-ghost">📅 オンライン面談を予約する</a>
+          <a href="https://yaku-navi.com/contact" class="btn btn-ghost">📩 お問い合わせ</a>
         </div>
       </div>
       <div class="fi d2">
+        <div class="cta-photo">
+          <img src="./images/cta_pharmacist.jpg" alt="薬局で働く薬剤師">
+        </div>
         <div class="cta-card">
           <div class="cta-card-title">登録でできること</div>
           <ul class="cta-points">
@@ -545,7 +539,6 @@
     </div>
   </div>
 </section>
-
 <!-- ENDPOINT -->
 <section id="endpoint">
   <div class="container">
@@ -559,11 +552,10 @@
         <li>もう他のサービスを探さなくていい確信</li>
       </ul>
       <a href="https://yaku-navi.com/auth/register/pharmacy" class="btn btn-green btn-lg">今すぐ無料登録する →</a>
-      <p class="endpoint-note">登録完了まで約1分 ｜ 完全無料 ｜ 掲載から採用決定まで費用¥0<br>貴局の採用が変わるその日まで、薬ナビが責任を持って寄り添います。</p>
+      <p class="endpoint-note">登録完了まで約1分 ｜ 完全無料 ｜ 掲載から体験決定まで費用¥0<br>貴局の採用が変わるその日まで、薬ナビが責任を持って寄り添います。</p>
     </div>
   </div>
 </section>
-
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -583,13 +575,11 @@
     <div class="footer-bottom">薬ナビ ｜ 薬剤師採用の新常識</div>
   </div>
 </footer>
-
 <script>
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fi').forEach(el => obs.observe(el));
-
   document.querySelectorAll('.qa-q').forEach(q => {
     q.addEventListener('click', () => {
       const item = q.parentElement;
@@ -598,7 +588,6 @@
       if (!open) item.classList.add('open');
     });
   });
-
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const t = document.querySelector(a.getAttribute('href'));
@@ -607,5 +596,4 @@
   });
 </script>
 </body>
-</html>  
-
+</html>
